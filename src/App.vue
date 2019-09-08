@@ -1,20 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <button class="btn" @click="openModal">Open Modal</button>
+    <modal-direction :value="modalOpen"></modal-direction>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import ModalDirection from "@/components/Modal";
 export default {
-  name: "app",
   components: {
-    HelloWorld
+    ModalDirection
+  },
+  data() {
+    return {
+      modalOpen: false
+    };
+  },
+  methods: {
+    openModal() {
+      this.modalOpen = !this.modalOpen;
+    }
   }
 };
 </script>
+
 
 <style>
 #app {
@@ -22,7 +31,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  /* color: #2c3e50; */
+
   margin-top: 60px;
 }
 </style>

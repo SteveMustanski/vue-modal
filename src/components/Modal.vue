@@ -9,7 +9,10 @@
       <a href="#" class="btn waze">
         <img src="https://img.icons8.com/color/420/waze.png" /> Waze
       </a>
-      <button @click.prevent="close" class="mt-3 border-b border-teal font-semibold">Close</button>
+      <button
+        v-on:click="$emit('close-modal')"
+        class="mt-3 border-b border-teal font-semibold"
+      >Close</button>
     </div>
   </div>
 </template>

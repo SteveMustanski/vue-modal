@@ -1,7 +1,7 @@
 <template>
   <div>
     <button class="btn" @click="openModal">Open Modal</button>
-    <modal-direction :value="modalOpen"></modal-direction>
+    <modal-direction :value="modalOpen" v-on:close-modal="modalOpen = !modalOpen"></modal-direction>
   </div>
 </template>
 
@@ -23,7 +23,6 @@ export default {
   }
 };
 </script>
-
 
 <style>
 #app {
